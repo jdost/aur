@@ -27,6 +27,6 @@ steps:
    - name: upload
      uses: action/upload@master
      with:
-       name: 'my-pkg'
-       path: ${{ steps.build.outputs.package }}
+       name: ${{ steps.build.outputs.name }}
+       path: ${{ steps.build.outputs.path }}
 ```

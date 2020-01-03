@@ -5,8 +5,10 @@ inputs:
     description: 'Relative path under $GITHUB_WORKSPACE to build from'
     default: '.'
 outputs:
-  package:
-    description: 'Generated tarball'
+  path:
+    description: 'Generated tarball relative to workspace'
+  name:
+    description: 'Filename for generated tarball'
 runs:
   using: 'docker'
   image: 'Dockerfile'
