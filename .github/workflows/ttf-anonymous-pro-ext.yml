@@ -4,6 +4,7 @@ on:
   push:
     paths:
     - 'ttf-anonymous-pro-ext/**'
+    - '.github/workflows/ttf-anonymous-pro-ext.yml'
 
 jobs:
   build:
@@ -15,7 +16,7 @@ jobs:
       uses: jdost/aur@action
       with:
         path: 'ttf-anonymous-pro-ext'
-    - uses: action/upload@master
+    - uses: actions/upload-artifact@v1
       with:
         name: ttf-anonymous-pro-ext
         path: $(( steps.build.outputs.package }}
