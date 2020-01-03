@@ -1,0 +1,21 @@
+name: Build `ttf-anonymous-pro-ext`
+
+on:
+  push:
+    paths:
+    - 'ttf-anonymous-pro-ext/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: build
+      uses: jdost/aur@action
+      with:
+        path: 'ttf-anonymous-pro-ext'
+    - uses: action/upload@master
+      with:
+        name: ttf-anonymous-pro-ext
+        path: $(( steps.build.outputs.package }}
