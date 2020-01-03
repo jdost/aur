@@ -1,0 +1,16 @@
+name: "AUR Build"
+description: "Build a package using the ABS system for use in Arch Linux"
+inputs:
+  path:
+    description: 'Relative path under $GITHUB_WORKSPACE to build from'
+    default: '.'
+outputs:
+  package:
+    description: 'Generated tarball'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args: ['${{ inputs.path }}']
+branding:
+  icon: 'package'
+  color: 'green'
