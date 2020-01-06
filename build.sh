@@ -11,6 +11,8 @@ if [[ ! -z "$PKG_PATH" ]]; then
    cd $PKG_PATH
 fi
 
+sudo chown -R $UID .
+namcap PKGBUILD
 makepkg -si --noconfirm
 
 PKG_NAME=$(ls *.pkg.tar.xz)
