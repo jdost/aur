@@ -11,12 +11,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: build
-      uses: jdost/aur@action
-      with:
-        path: 'ttf-anonymous-pro-ext'
-    - uses: actions/upload-artifact@v1
-      with:
-        name: ttf-anonymous-pro-ext
-        path: $(( steps.build.outputs.package }}
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: build
+        uses: jdost/aur@action
+        with:
+          path: 'ttf-anonymous-pro-ext'
+      - name: upload
+        uses: actions/upload-artifact@v1
+        with:
+          name: ttf-anonymous-pro-ext
+          path: $(( steps.build.outputs.package }}
