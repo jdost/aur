@@ -20,10 +20,5 @@ jobs:
       - name: upload
         uses: actions/upload-artifact@v1
         with:
-          name: ${{ steps.build.outputs.name }}
-          path: ${{ steps.build.outputs.path }}
-      - name: upload-default
-        uses: actions/upload-artifact@v1
-        with:
-          name: 'ttf-anonymoux-pro-ext.pkg.tar.xz'
-          path: ${{ steps.build.outputs.path }}
+          name: ${{ steps.build.outputs.pkg_name }}
+          path: ${{ steps.build.outputs.pkg_path }}
