@@ -16,5 +16,5 @@ namcap PKGBUILD
 makepkg -si --noconfirm
 
 PKG_NAME=$(ls *.pkg.tar.xz)
-echo "::set-output name=path=$PKG_PATH/$PKG_NAME"
-echo "::set-output name=name=$PKG_NAME"
+echo "::set-output name=path::$PKG_PATH/$PKG_NAME"
+echo "::set-output name=name::$PKG_NAME"
