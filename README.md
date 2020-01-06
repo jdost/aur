@@ -12,7 +12,8 @@ provided.
 
 ## Outputs
 
-* `package` - path in the workspace for the built `.pkg.tar.xz` file
+* `pkg_path` - path in the workspace for the built `.pkg.tar.xz` file
+* `pkg_name` - base name for the package built if you want to preserve it
 
 ## Example usage
 
@@ -27,6 +28,6 @@ steps:
    - name: upload
      uses: action/upload@master
      with:
-       name: ${{ steps.build.outputs.name }}
-       path: ${{ steps.build.outputs.path }}
+       name: ${{ steps.build.outputs.pkg_name }}
+       path: ${{ steps.build.outputs.pkg_path }}
 ```
